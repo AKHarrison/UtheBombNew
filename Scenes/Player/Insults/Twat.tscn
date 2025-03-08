@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=3 uid="uid://bmpr8whb6s8xa"]
+
+[ext_resource type="Script" path="res://Scripts/twat.gd" id="1_tuwh1"]
+[ext_resource type="Theme" uid="uid://lbd43rig8hm5" path="res://insult.tres" id="2_8ydtf"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_2jq7x"]
+radius = 9.05539
+
+[node name="TWAT" type="Area2D"]
+top_level = true
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_tuwh1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(1.06711, 0.471918)
+shape = SubResource("CircleShape2D_2jq7x")
+debug_color = Color(0, 0.634569, 0.427503, 0.42)
+
+[node name="Label" type="Label" parent="."]
+texture_filter = 1
+texture_repeat = 1
+offset_left = -9.0
+offset_top = -4.0
+offset_right = 114.0
+offset_bottom = 54.0
+scale = Vector2(0.135366, 0.142459)
+theme = ExtResource("2_8ydtf")
+text = "TWAT"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
