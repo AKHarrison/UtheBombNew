@@ -4,18 +4,21 @@
 [ext_resource type="AudioStream" uid="uid://3mreaadn4mgs" path="res://Sprites/TwatAudio.wav" id="2_4jq5f"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_fc0iq"]
-radius = 80.399
+radius = 177.496
 
 [node name="Mouth" type="Area2D"]
+rotation = -1.58651
 collision_layer = 0
 collision_mask = 2
 script = ExtResource("1_fgg1i")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = 1.56731
 shape = SubResource("CircleShape2D_fc0iq")
 debug_color = Color(0.929969, 0.249334, 0.2327, 0.42)
 
 [node name="Marker2D" type="Marker2D" parent="."]
+rotation = -4.67748
 
 [node name="AttackPoint" type="Marker2D" parent="Marker2D"]
 unique_name_in_owner = true

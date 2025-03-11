@@ -1,21 +1,11 @@
 class_name MobState extends Node
 
+signal state_finsihed
 
-var mob : Mob
-var state_machine : MobStateMachine
 
-func init() -> void:
-	pass
-
-func Enter() -> void:
+func _enter_state():
 	pass
 	
-func Exit() -> void:
+func _exit_state():
 	pass
-	
-func Process(_delta : float) -> MobState:
-	return null
-	
-func Physics(_delta : float) -> MobState:
-	return null
 	

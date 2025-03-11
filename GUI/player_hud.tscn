@@ -1,0 +1,23 @@
+[gd_scene load_steps=2 format=3 uid="uid://chax2rt7oshui"]
+
+[ext_resource type="Script" path="res://GUI/player_hud.gd" id="1_vu68d"]
+
+[node name="PlayerHud" type="CanvasLayer"]
+script = ExtResource("1_vu68d")
+
+[node name="Label" type="Label" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 23.0
+grow_horizontal = 2
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2

@@ -1,7 +1,7 @@
 class_name State extends Node
 
 static var player: Player
-static var mob: Mob
+
 # Called when th e node enters the scene tree for the first time.
 func _ready() -> void:
 	pass

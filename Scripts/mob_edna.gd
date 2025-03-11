@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-@export var player: CharacterBody2D
+@onready var player: CharacterBody2D = null
 
 var special_health = 1
 var health = 3 
@@ -13,6 +13,7 @@ var health = 3
 const SPEED = 30.0
 
 func _ready() -> void:
+	player = get_tree().get_first_node_in_group("player")
 	set_physics_process(false)
 	call_deferred("wait_for_physics")
 	move()

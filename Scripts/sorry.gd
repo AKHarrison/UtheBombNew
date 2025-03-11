@@ -18,5 +18,5 @@ func _physics_process(delta):
 		
 
 func _on_body_entered(body: Node2D) -> void:
-	if body.has_method("set_idle"):
-		body.set_idle()
+	if body.has_method("send_home"):
+		body.send_home()

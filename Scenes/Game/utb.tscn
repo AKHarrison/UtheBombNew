@@ -1,8 +1,50 @@
-[gd_scene load_steps=5 format=3 uid="uid://0f4qqttfgmqj"]
+[gd_scene load_steps=9 format=3 uid="uid://0f4qqttfgmqj"]
 
 [ext_resource type="PackedScene" uid="uid://c530v30o431vv" path="res://Scenes/Game/Ground.tscn" id="1_1pr2j"]
+[ext_resource type="Script" path="res://Scenes/Game/utb.gd" id="1_8d1gu"]
 [ext_resource type="PackedScene" uid="uid://cxth7ibjroci6" path="res://Scenes/Player/player.tscn" id="1_ygwuu"]
-[ext_resource type="Script" path="res://Scripts/mob_spawn.gd" id="3_tol32"]
+[ext_resource type="PackedScene" uid="uid://chax2rt7oshui" path="res://GUI/player_hud.tscn" id="2_3f5am"]
+[ext_resource type="Texture2D" uid="uid://c6q5sfndt1mcm" path="res://Sprites/Light.png" id="5_2t4o7"]
+
+[sub_resource type="GDScript" id="GDScript_sd0uv"]
+script/source = "extends Node
+
+var mob_types = [
+	preload(\"res://Scenes/Mob/mob_base.tscn\"),
+] 
+
+
+func spawn_mob_North():
+	var mob_scene = mob_types.pick_random()
+	var new_mob = mob_scene.instantiate()
+	new_mob.global_position = %North.global_position
+	add_child(new_mob)
+#
+#func spawn_mob_South():
+	#var mob_scene = mob_types.pick_random()
+	#var new_mob = mob_scene.instantiate()
+	#new_mob.global_position = %South.global_position
+	#add_child(new_mob)
+	#
+#func spawn_mob_Eastn():
+	#var mob_scene = mob_types.pick_random()
+	#var new_mob = mob_scene.instantiate()
+	#new_mob.global_position = %East.global_position
+	#add_child(new_mob)
+	#
+#func spawn_mob_West():
+	#var mob_scene = mob_types.pick_random()
+	#var new_mob = mob_scene.instantiate()
+	#new_mob.global_position = %West.global_position
+	#add_child(new_mob)
+
+func _on_timer_timeout() -> void:
+	spawn_mob_North()
+	#spawn_mob_Eastn()
+	#spawn_mob_West()
+	#spawn_mob_South()
+	#
+"
 
 [sub_resource type="Curve2D" id="Curve2D_8t4di"]
 _data = {
@@ -10,15 +52,22 @@ _data = {
 }
 point_count = 5
 
-[node name="UTB" type="Node2D"]
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_gu44a"]
+blend_mode = 3
+
+[node name="UTB" type="Node2D" node_paths=PackedStringArray("player")]
+script = ExtResource("1_8d1gu")
+player = NodePath("Player")
 
 [node name="Player" parent="." instance=ExtResource("1_ygwuu")]
 position = Vector2(255, 145)
 
+[node name="PlayerHud" parent="." instance=ExtResource("2_3f5am")]
+
 [node name="Ground" parent="." instance=ExtResource("1_1pr2j")]
 
 [node name="MobSpawn" type="Node2D" parent="."]
-script = ExtResource("3_tol32")
+script = SubResource("GDScript_sd0uv")
 
 [node name="SpawnPath" type="Path2D" parent="MobSpawn"]
 curve = SubResource("Curve2D_8t4di")
@@ -48,7 +97,18 @@ rotation = -1.56072
 progress = 2288.29
 
 [node name="Timer" type="Timer" parent="MobSpawn"]
-wait_time = 8.977
+wait_time = 5.0
 autostart = true
+
+[node name="Fog" type="Sprite2D" parent="."]
+z_index = 4
+texture_filter = 4
+material = SubResource("CanvasItemMaterial_gu44a")
+texture = ExtResource("5_2t4o7")
+centered = false
+
+[node name="MobHome" type="Marker2D" parent="." groups=["home_point"]]
+unique_name_in_owner = true
+position = Vector2(683, 385)
 
 [connection signal="timeout" from="MobSpawn/Timer" to="MobSpawn" method="_on_timer_timeout"]

@@ -4,7 +4,7 @@ extends Area2D
 @onready var audio: AudioStreamPlayer2D = $Audio/AudioStreamPlayer2D
 
 var twat = preload("res://Scenes/Player/Insults/Twat.tscn")
-#var divvy = preload("res://Scenes/insult2.tscn")
+var sorry = preload("res://Scenes/Player/Insults/Sorry.tscn")
 #var numpty = preload("res://Scenes/insult3.tscn") 
 var current_ammo_index = 0
 var current_insult_index = 0
@@ -19,8 +19,10 @@ func _input(event):
 		insult_twat()
 		
 		
-	#elif event.is_action_pressed("ui_X"):
-		#insult_divvy()
+	elif event.is_action_pressed("sorry"):
+		print("bob")
+		say_sorry()
+		
 	#elif event.is_action_pressed("ui_Y"):
 		#insult_numpty()
 		
@@ -44,13 +46,13 @@ func insult_twat():
 	
 
 	
-	#
-#func insult_divvy():
-	#var insult_scene = divvy
-	#var new_insult = insult_scene.instantiate()
-	#new_insult.global_position = %AttackPoint.global_position
-	#new_insult.global_rotation = %AttackPoint.global_rotation
-	#%AttackPoint.add_child((new_insult))
+	
+func say_sorry():
+	var insult_scene = sorry
+	var new_insult = insult_scene.instantiate()
+	new_insult.global_position = %AttackPoint.global_position
+	new_insult.global_rotation = %AttackPoint.global_rotation
+	%AttackPoint.add_child((new_insult))
 #
 #func insult_numpty():
 	#var insult_scene = numpty
