@@ -12,14 +12,21 @@ var direction : Vector2 = Vector2.ZERO
 func _ready():
 	state_machine.Initialise(self)
 	pass
+
 	
 func _process(delta):
+	var input_x = Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left")
+	var input_y = Input.get_action_strength("ui_down") - Input.get_action_strength("ui_up")
 	
-	direction.x = Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left")
-	direction.y = Input.get_action_strength("ui_down") - Input.get_action_strength("ui_up")
-	
-	
-	pass
+	# Prevent diagonal movement by prioritizing one axis
+	if input_x != 0:
+		direction.x = input_x
+		direction.y = 0
+	elif input_y != 0:
+		direction.x = 0
+		direction.y = input_y
+	else:
+		direction = Vector2.ZERO
 	
 func _physics_process(delta):	
 	move_and_slide()

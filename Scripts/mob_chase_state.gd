@@ -15,7 +15,7 @@ func _ready() -> void:
 	
 func _enter_state() -> void:
 	set_physics_process(true)
-	animator.play("edna_move")
+	animator.play("tache_move")
 	
 func _exit_state() -> void:
 	set_physics_process(false)

@@ -11,7 +11,7 @@ signal go_home
 
 func _enter_state():
 	set_physics_process(true)
-	animator.play("edna_idle")
+	animator.play("tache_idle")
 	actor.velocity = Vector2.ZERO
 	
 	

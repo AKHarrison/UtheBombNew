@@ -8,7 +8,7 @@ signal found_player
 
 func _enter_state():
 	set_physics_process(true)
-	animator.play("edna_idle")
+	animator.play("tache_idle")
 	if actor.velocity == Vector2.ZERO:
 		actor.velocity = Vector2.RIGHT.rotated(randf_range(0, TAU)) * actor.low_speed
 		
