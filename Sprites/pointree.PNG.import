@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://clnjh2h6tjp7g"
-path="res://.godot/imported/shop1.PNG-ce0e2f507977ecfd924734992eec3915.ctex"
+uid="uid://bf232jqmijt6f"
+path="res://.godot/imported/pointree.PNG-63d049767ba756b84cee2d788030b675.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/shop1.PNG"
-dest_files=["res://.godot/imported/shop1.PNG-ce0e2f507977ecfd924734992eec3915.ctex"]
+source_file="res://Sprites/pointree.PNG"
+dest_files=["res://.godot/imported/pointree.PNG-63d049767ba756b84cee2d788030b675.ctex"]
 
 [params]
 

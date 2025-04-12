@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://clnjh2h6tjp7g"
-path="res://.godot/imported/shop1.PNG-ce0e2f507977ecfd924734992eec3915.ctex"
+uid="uid://b3nbmr6t2bqmq"
+path="res://.godot/imported/shelter.PNG-1c4b5a823dd2425e72f05253f9ed0549.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/shop1.PNG"
-dest_files=["res://.godot/imported/shop1.PNG-ce0e2f507977ecfd924734992eec3915.ctex"]
+source_file="res://Sprites/shelter.PNG"
+dest_files=["res://.godot/imported/shelter.PNG-1c4b5a823dd2425e72f05253f9ed0549.ctex"]
 
 [params]
 

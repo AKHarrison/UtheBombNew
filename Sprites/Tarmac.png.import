@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://clnjh2h6tjp7g"
-path="res://.godot/imported/shop1.PNG-ce0e2f507977ecfd924734992eec3915.ctex"
+uid="uid://1ecex3dqviv0"
+path="res://.godot/imported/Tarmac.png-205a869baf131e4e816347d86996a568.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/shop1.PNG"
-dest_files=["res://.godot/imported/shop1.PNG-ce0e2f507977ecfd924734992eec3915.ctex"]
+source_file="res://Sprites/Tarmac.png"
+dest_files=["res://.godot/imported/Tarmac.png-205a869baf131e4e816347d86996a568.ctex"]
 
 [params]
 
