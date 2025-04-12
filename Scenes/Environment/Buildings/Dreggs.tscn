@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://3axjm3yjklj1"]
+
+[ext_resource type="Texture2D" uid="uid://ckwyuk7kxlk4e" path="res://Sprites/dreggs.PNG" id="1_6jq4o"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h5a32"]
+size = Vector2(172.114, 179.286)
+
+[node name="Dreggs" type="StaticBody2D"]
+y_sort_enabled = true
+position = Vector2(-3.05176e-05, -9.53674e-07)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.342829, -5.35713)
+shape = SubResource("RectangleShape2D_h5a32")
+
+[node name="Dreggs" type="Sprite2D" parent="."]
+position = Vector2(-1.42855, -2.85714)
+texture = ExtResource("1_6jq4o")

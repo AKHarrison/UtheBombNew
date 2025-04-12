@@ -147,7 +147,7 @@ _data = {
 }
 
 [node name="Player" type="CharacterBody2D" groups=["player"]]
-position = Vector2(0, 1)
+y_sort_enabled = true
 script = ExtResource("1_vhgjo")
 
 [node name="Mouth" parent="." instance=ExtResource("2_br0km")]
@@ -179,4 +179,5 @@ script = ExtResource("5_voh0j")
 script = ExtResource("6_5v2d5")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(-5, -1)
 script = ExtResource("7_pwc13")
