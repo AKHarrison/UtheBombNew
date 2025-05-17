@@ -1,4 +1,4 @@
-class_name MobChaseState extends MobState
+class_name GranChaseState extends MobState
 
 @export var actor: CharacterBody2D
 @export var vision_cast: RayCast2D
@@ -15,7 +15,7 @@ func _ready() -> void:
 	
 func _enter_state() -> void:
 	set_physics_process(true)
-	animator.play("tache_move")
+	animator.play("gran_move")
 	
 func _exit_state() -> void:
 	set_physics_process(false)

@@ -1,16 +1,16 @@
-class_name MobHomeState extends MobState
+class_name EdnaWanderState extends MobState
 
 @export var actor: CharacterBody2D	
 @export var vision_cast: RayCast2D
 @onready var animator: AnimationPlayer = %AnimationPlayer
 
-
+signal found_player
 
 func _enter_state():
 	set_physics_process(true)
 	animator.play("edna_idle")
 	if actor.velocity == Vector2.ZERO:
-		actor.velocity = Vector2.RIGHT.rotated(randf_range(0, TAU)) * actor.max_speed
+		actor.velocity = Vector2.RIGHT.rotated(randf_range(0, TAU)) * actor.low_speed
 		
 		
 func _exit_state():
@@ -22,5 +22,6 @@ func _physics_process(delta):
 	if collision:
 		var bounce_velocity = wander_velocity.bounce(collision.get_normal())
 		actor.velocity = bounce_velocity
-
+	if not vision_cast.is_colliding():
+		found_player.emit()
 	

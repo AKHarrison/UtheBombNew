@@ -1,4 +1,4 @@
-class_name MobHomeState extends MobState
+class_name EdnaHomeState extends MobState
 
 @export var actor: CharacterBody2D	
 @export var vision_cast: RayCast2D

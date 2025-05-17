@@ -1,4 +1,4 @@
-class_name MobChaseState extends MobState
+class_name TacheChaseState extends MobState
 
 @export var actor: CharacterBody2D
 @export var vision_cast: RayCast2D
