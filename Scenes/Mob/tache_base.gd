@@ -1,4 +1,4 @@
-class_name MobBase extends CharacterBody2D
+class_name TacheBase extends CharacterBody2D
 
 var max_speed: float = 20.0
 var low_speed: float = 5.0
@@ -11,10 +11,10 @@ var home: bool = false
 
 @onready var ray_cast_2d: RayCast2D = $RayCast2D
 @onready var msm: MobStateMachine = $MobStateMachine
-@onready var mob_wander_state: MobWanderState = $MobStateMachine/MobWanderState as MobWanderState
-@onready var mob_chase_state: MobChaseState = $MobStateMachine/MobChaseState as MobChaseState
-@onready var mob_idle_state: MobIdleState = $MobStateMachine/MobIdleState as MobIdleState
-@onready var mob_home_state: MobHomeState = $MobStateMachine/MobHomeState as MobHomeState
+@onready var mob_wander_state: TacheWanderState = $MobStateMachine/MobWanderState as TacheWanderState
+@onready var mob_chase_state: TacheChaseState = $MobStateMachine/MobChaseState as TacheChaseState
+@onready var mob_idle_state: TacheIdleState = $MobStateMachine/MobIdleState as TacheIdleState
+@onready var mob_home_state: TacheHomeState = $MobStateMachine/MobHomeState as TacheHomeState
 
 func _ready():
 	player = get_tree().get_first_node_in_group("player")

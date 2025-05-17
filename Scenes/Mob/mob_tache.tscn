@@ -1,11 +1,11 @@
 [gd_scene load_steps=17 format=3 uid="uid://bj2bcbotycywu"]
 
-[ext_resource type="Script" path="res://Scenes/Mob/mob_base.gd" id="1_5cc12"]
+[ext_resource type="Script" path="res://Scenes/Mob/tache_base.gd" id="1_nadxu"]
 [ext_resource type="Script" path="res://Scripts/mob_state_machine.gd" id="2_rwoo1"]
-[ext_resource type="Script" path="res://Scripts/mob_wander_state.gd" id="3_41t13"]
-[ext_resource type="Script" path="res://Scripts/mob_chase_state.gd" id="4_eypuk"]
-[ext_resource type="Script" path="res://Scripts/mob_idle_state.gd" id="5_od6dr"]
-[ext_resource type="Script" path="res://Scripts/mob_home_state.gd" id="6_ipeda"]
+[ext_resource type="Script" path="res://Scripts/tache_wander_state.gd" id="3_otdya"]
+[ext_resource type="Script" path="res://Scripts/tache_chase_state.gd" id="4_e1htk"]
+[ext_resource type="Script" path="res://Scripts/tache_idle_state.gd" id="5_erh4i"]
+[ext_resource type="Script" path="res://Scripts/tache_home_state.gd" id="6_ktjka"]
 [ext_resource type="Texture2D" uid="uid://dnx4yp2bknlio" path="res://Sprites/all_mob.png" id="7_br4v5"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_0w8w2"]
@@ -121,11 +121,11 @@ _data = {
 "tache_move": SubResource("Animation_dajxo")
 }
 
-[node name="MobGran" type="CharacterBody2D"]
+[node name="MobTache" type="CharacterBody2D"]
 y_sort_enabled = true
 position = Vector2(0, -6)
 collision_layer = 7
-script = ExtResource("1_5cc12")
+script = ExtResource("1_nadxu")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 4)
@@ -142,21 +142,21 @@ script = ExtResource("2_rwoo1")
 state = NodePath("MobWanderState")
 
 [node name="MobWanderState" type="Node" parent="MobStateMachine" node_paths=PackedStringArray("actor", "vision_cast")]
-script = ExtResource("3_41t13")
+script = ExtResource("3_otdya")
 actor = NodePath("../..")
 vision_cast = NodePath("../../RayCast2D")
 
 [node name="MobChaseState" type="Node" parent="MobStateMachine" node_paths=PackedStringArray("actor", "vision_cast")]
-script = ExtResource("4_eypuk")
+script = ExtResource("4_e1htk")
 actor = NodePath("../..")
 vision_cast = NodePath("../../RayCast2D")
 
 [node name="MobIdleState" type="Node" parent="MobStateMachine" node_paths=PackedStringArray("actor")]
-script = ExtResource("5_od6dr")
+script = ExtResource("5_erh4i")
 actor = NodePath("../..")
 
 [node name="MobHomeState" type="Node" parent="MobStateMachine" node_paths=PackedStringArray("actor", "vision_cast")]
-script = ExtResource("6_ipeda")
+script = ExtResource("6_ktjka")
 actor = NodePath("../..")
 vision_cast = NodePath("../../RayCast2D")
 

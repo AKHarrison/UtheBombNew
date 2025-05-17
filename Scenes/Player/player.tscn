@@ -7,7 +7,7 @@
 [ext_resource type="Script" path="res://Scripts/player_state_machine.gd" id="4_8jedd"]
 [ext_resource type="Script" path="res://Scripts/state_idle.gd" id="5_voh0j"]
 [ext_resource type="Script" path="res://Scripts/state_move.gd" id="6_5v2d5"]
-[ext_resource type="Script" path="res://Scripts/PlayerCamera.gd" id="7_pwc13"]
+[ext_resource type="Script" path="res://Scripts/PlayerCamera.gd" id="8_u4qj5"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_b4sv0"]
 radius = 8.0
@@ -179,5 +179,4 @@ script = ExtResource("5_voh0j")
 script = ExtResource("6_5v2d5")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(-5, -1)
-script = ExtResource("7_pwc13")
+script = ExtResource("8_u4qj5")

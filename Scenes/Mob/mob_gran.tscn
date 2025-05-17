@@ -1,12 +1,12 @@
 [gd_scene load_steps=15 format=3 uid="uid://c803cv0f27fj5"]
 
-[ext_resource type="Script" path="res://Scenes/Mob/mob_base.gd" id="1_ukrq3"]
+[ext_resource type="Script" path="res://Scenes/Mob/gran_base.gd" id="1_lvbj6"]
 [ext_resource type="Texture2D" uid="uid://dnx4yp2bknlio" path="res://Sprites/all_mob.png" id="2_ig66h"]
 [ext_resource type="Script" path="res://Scripts/mob_state_machine.gd" id="3_2myln"]
-[ext_resource type="Script" path="res://Scripts/mob_wander_state.gd" id="4_vops5"]
-[ext_resource type="Script" path="res://Scripts/mob_chase_state.gd" id="5_vlwjt"]
-[ext_resource type="Script" path="res://Scripts/mob_idle_state.gd" id="6_v5n20"]
-[ext_resource type="Script" path="res://Scripts/mob_home_state.gd" id="7_5maq6"]
+[ext_resource type="Script" path="res://Scripts/gran_wander_state.gd" id="3_3eyfy"]
+[ext_resource type="Script" path="res://Scripts/gran_chase_state.gd" id="4_dcux6"]
+[ext_resource type="Script" path="res://Scripts/gran_idle_state.gd" id="5_g168d"]
+[ext_resource type="Script" path="res://Scripts/gran_home_state.gd" id="6_1rxgx"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_0w8w2"]
 radius = 12.0416
@@ -87,7 +87,7 @@ _data = {
 y_sort_enabled = true
 position = Vector2(0, -6)
 collision_layer = 7
-script = ExtResource("1_ukrq3")
+script = ExtResource("1_lvbj6")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 4)
@@ -104,21 +104,21 @@ script = ExtResource("3_2myln")
 state = NodePath("MobWanderState")
 
 [node name="MobWanderState" type="Node" parent="MobStateMachine" node_paths=PackedStringArray("actor", "vision_cast")]
-script = ExtResource("4_vops5")
+script = ExtResource("3_3eyfy")
 actor = NodePath("../..")
 vision_cast = NodePath("../../RayCast2D")
 
 [node name="MobChaseState" type="Node" parent="MobStateMachine" node_paths=PackedStringArray("actor", "vision_cast")]
-script = ExtResource("5_vlwjt")
+script = ExtResource("4_dcux6")
 actor = NodePath("../..")
 vision_cast = NodePath("../../RayCast2D")
 
 [node name="MobIdleState" type="Node" parent="MobStateMachine" node_paths=PackedStringArray("actor")]
-script = ExtResource("6_v5n20")
+script = ExtResource("5_g168d")
 actor = NodePath("../..")
 
 [node name="MobHomeState" type="Node" parent="MobStateMachine" node_paths=PackedStringArray("actor", "vision_cast")]
-script = ExtResource("7_5maq6")
+script = ExtResource("6_1rxgx")
 actor = NodePath("../..")
 vision_cast = NodePath("../../RayCast2D")
 

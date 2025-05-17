@@ -1,4 +1,4 @@
-class_name MobBase extends CharacterBody2D
+class_name GranBase extends CharacterBody2D
 
 var max_speed: float = 20.0
 var low_speed: float = 5.0
@@ -11,10 +11,10 @@ var home: bool = false
 
 @onready var ray_cast_2d: RayCast2D = $RayCast2D
 @onready var msm: MobStateMachine = $MobStateMachine
-@onready var mob_wander_state: MobWanderState = $MobStateMachine/MobWanderState as MobWanderState
-@onready var mob_chase_state: MobChaseState = $MobStateMachine/MobChaseState as MobChaseState
-@onready var mob_idle_state: MobIdleState = $MobStateMachine/MobIdleState as MobIdleState
-@onready var mob_home_state: MobHomeState = $MobStateMachine/MobHomeState as MobHomeState
+@onready var mob_wander_state: GranWanderState = $MobStateMachine/MobWanderState as GranWanderState
+@onready var mob_chase_state: GranChaseState = $MobStateMachine/MobChaseState as GranChaseState
+@onready var mob_idle_state: GranIdleState = $MobStateMachine/MobIdleState as GranIdleState
+@onready var mob_home_state: GranHomeState = $MobStateMachine/MobHomeState as GranHomeState
 
 func _ready():
 	player = get_tree().get_first_node_in_group("player")
